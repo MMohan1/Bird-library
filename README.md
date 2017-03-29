@@ -37,3 +37,5 @@ steps
 5) run the app
 
        python run.py
+
+Please view #birds.json from flow and how to test.
