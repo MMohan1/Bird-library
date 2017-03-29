@@ -1,0 +1,141 @@
+insert data--
+POST
+/api/v1.0/birds
+
+
+valid json(Will insert)
+
+1.
+{
+  "name": "Turkey",
+  "family": "Phasianidae",
+  "continents": [
+    "East UK",
+    "North Amerika"
+  ],
+  "visible": true
+}
+
+
+2.
+{
+  "name": "nald eagle",
+  "family": "Phasianidae",
+  "continents": [
+    "USA",
+    "Europe"
+  ],
+  "visible": true
+}
+
+3.
+{
+  "name": "California condor",
+  "family": "Khutnyidae",
+  "continents": [
+      "India",
+      "Pakistan",
+      "North Amerika"
+  ],
+  "visible": true
+}
+
+
+
+valid json that will be ingested but will not be come in disply all birds
+
+1.
+{
+  "name": "California",
+  "family": "Khutnyidjklae",
+  "continents": [
+      "India",
+      "Pakistan",
+      "North Amerika"
+  ]
+}
+
+
+
+
+Wrong json will not be insert-
+
+
+1.
+{
+  "name": "California",
+  "family": "Khutnyidjklae",
+  "continents": [
+  ]
+}
+
+
+2.
+{
+  "name": "California",
+  "family": "",
+  "continents": [
+      "India",
+      "Pakistan",
+      "North Amerika"
+  ]
+}
+
+3.
+{
+  "name": "",
+  "family": "Khutnyidjklae",
+  "continents": [
+      "India",
+      "Pakistan",
+      "North Amerika"
+  ]
+}
+
+
+
+4.
+{
+  "name": "California",
+  "family": "Khutnyidjklae",
+  "continents": [
+      "India",
+      123,
+      "North Amerika"
+  ]
+}
+
+
+5.
+{
+  "name": "California",
+  "family": "Khutnyidjklae",
+  "continents": [
+      "India",
+      "Pakistan"
+      "North Amerika"
+  ],
+    "visible": "true"
+}
+
+
+
+After this validation
+
+get all the birds - [only visible true will come]
+    /api/v1.0/birds
+
+
+get one bidrs details
+GET
+    /api/v1.0/birds/{pass valid id}  [Will work]
+
+    /api/v1.0/birds{pass invalid id}  [Error messgae]
+
+
+to delete a brids
+DELETE
+    /api/v1.0/birds/{pass valid id}  [Will work]
+
+    /api/v1.0/birds{pass invalid id}  [Error messgae]
+
