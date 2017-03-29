@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+from birds import config_dict
 from mongoengine import DynamicDocument,connect,StringField,ListField,BooleanField,DateTimeField
-connect(db='birds_library',host="localhost")
+connect(db=config_dict["mongo"]["db_name"],host=config_dict["mongo"]["host"])
 
 class Birds(DynamicDocument):
     id = StringField(required=True, primary_key=True) #Object id from the database

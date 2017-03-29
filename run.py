@@ -3,15 +3,8 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.wsgi import WSGIContainer
 import sys
-from birds import birds_app    
-port_number = 5015
-# TODO - config_dict should be constructed with proper type
-# if int(config_dict[constants.HACONFIG_SECTION][constants.HACONFIG_NEWRELIC]):
-#     import newrelic.agent
-
-#     newrelic.agent.initialize(
-#         '/home/edge/projects/hirenew_venv/local/lib/python2.7/site-packages/newrelic-2.50.0.39/newrelic/newrelic.ini')
-
+from birds import birds_app,config_dict
+port_number = config_dict["birds_conf"]["port"]
 sys.dont_write_bytecode = True
 http_server = HTTPServer(WSGIContainer(birds_app))
 http_server.listen(port_number, '0.0.0.0')

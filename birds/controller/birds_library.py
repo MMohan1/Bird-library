@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from birds.models.birds_model import Birds
 from datetime import datetime
 from uuid import uuid4
@@ -55,8 +56,6 @@ class BirdsOpration(object):
         br.visible = bird_data.get("visible",False)
         try:
             br.save()
-            # data = br._data
-            # data["added"] = datetime.strftime(data["added"],"%Y-%m-%d")
             return {"success":True, "message":"new bird added to the library"},201
         except Exception as e:
             if type(e).__name__ == "ValidationError":
@@ -72,7 +71,7 @@ class BirdsOpration(object):
         @bird_data -- br id type(str)
 
         --output
-        response that conation data ingetsed or not
+        response that contaion data deleted  or not
         """
         br = Birds.objects(id=bird_id).first()
         if br:
@@ -83,6 +82,8 @@ class BirdsOpration(object):
         
     def get_birds(self, bird_id=None):
         """
+        method is used to get birds details
+        details may be to get all birds ids or to get all details for a bird
         """
         if not bird_id:
             brds = Birds.objects(visible=True)

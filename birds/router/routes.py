@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from birds import birds_api
 from birds.router.resourcer import Birds
 
