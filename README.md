@@ -20,7 +20,7 @@ How To run
 steps
 1) Clone the repo-
 
-git clone https://github.com/MMohan1/Bird-library.git
+       git clone https://github.com/MMohan1/Bird-library.git
 
 2) create a virtual env and activate it
 create-
