@@ -23,24 +23,13 @@ steps
        git clone https://github.com/MMohan1/Bird-library.git
 
 2) create a virtual env and activate it
-create-
       virtualenv birds_venv
-Activate-
      . birds/bin/activate
 
 
-3) install the require python packages
-
-got to clone repo and inside Bird-library run
-
+3) install the require python packages - got to clone repo and inside Bird-library run
     pip install -r requirements.txt
 
-4) change the app confuguration if require
-go to open /Bird-library/birds/config.ini
-
-and make change for mongo and app port
-
-
+4) change the app confuguration if require - go to open /Bird-library/birds/config.ini and make change for mongo and app port
 5) run the app
-
-   python run.py
+     python run.py
